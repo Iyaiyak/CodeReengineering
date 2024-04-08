@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="Asset/Logo Website.png">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/Web.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>The Change Preventer</h1>
+            <p>
+                "Code smell Change Preventers" mengacu pada pola-pola atau tanda-tanda dalam kode yang dapat menunjukkan kebutuhan untuk memperbaiki desain agar lebih tahan terhadap perubahan (change-resistant). Ini melibatkan prinsip-prinsip desain yang mencegah penyebaran (propagation) perubahan kode yang berlebihan dan kompleksitas struktural yang tinggi, yang pada gilirannya dapat meningkatkan biaya pemeliharaan dan risiko pembuatan kesalahan.
+            </p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="text-decoration: underline;">HOME</a></li>
+                <li><a href="#DivChange">Divergent Change</a></li>
+                <li><a href="#ShotSur">Shotgun Surgery</a></li>
+                <li><a href="#Parallel">Parallel Inheritance Hierarchies</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+       <div id="content">
+            <article id="DivChange" class="card">
+                <h2 id="DivChange" style="font-style: italic;">Divergent Change </h2>
+                <img src="Asset/DivChange1.png" width="300px">
+                <p>
+                    Divergent Change terjadi ketika perubahan yang dilakukan pada kode memerlukan modifikasi pada beberapa bagian yang berbeda dari sistem yang tidak terkait secara konseptual. Ini menunjukkan bahwa fitur atau fungsionalitas tertentu terlalu tersebar di berbagai bagian kode yang tidak saling terkait. Ketika ada perubahan pada fitur itu, pengembang harus menyunting banyak bagian kode yang terpisah. Divergent Change membuat kode sulit dipahami, dikelola, dan diperbarui. Solusi untuk masalah ini mungkin melibatkan refactoring untuk menyatukan atau mengelompokkan kode yang berkaitan dengan fitur tertentu.
+                    <br>
+                    Contoh Code nya sebagai berikut : 
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/ChangePreventer/DivergentChange.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/ChangePreventer_Refactored/DivergentChange.java">Setelah Refactor</a></p>
+            </article>
+
+            <article id="#ShotSur" class="card">
+                <h2 id="ShotSur" style="font-style: italic;">Shotgun Surgery </h2>
+                <img src="Asset/ShotSur1.png" width="300px">
+                <p>
+                    Shotgun Surgery terjadi ketika satu perubahan kecil pada sistem memerlukan modifikasi pada banyak bagian kode yang berbeda. Analogi yang digunakan adalah seperti menembak dengan senapan yang menyebar, di mana perubahan yang kecil memiliki efek yang tersebar luas di berbagai bagian kode. Ini menunjukkan bahwa sistem mungkin terlalu ketergantungan pada beberapa komponen atau bahwa fungsionalitas terlalu terinterkoneksi. Solusi untuk Shotgun Surgery mungkin melibatkan penggabungan atau pengelompokan fungsionalitas terkait agar perubahan dapat dilakukan dengan lebih efisien.
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/ChangePreventer/ShotgunSurgery.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/ChangePreventer_Refactored/ShotgunSurgery.java">Setelah Refactor</a></p>
+            </article>
+
+            <article id="Parallel" class="card">
+                <h2 id="Parallel" style="font-style: italic;">Parallel Inheritance Hierarchies </h2>
+                <img src="Asset/Parallel1.png" width="300px">
+                <p>
+                    Parallel Inheritance Hierarchies terjadi ketika ada dua atau lebih hierarki kelas yang saling bergantung dan berkembang bersamaan. Setiap kali ada perubahan dalam satu hierarki, perubahan serupa atau terkait juga diperlukan di hierarki lainnya. Ini meningkatkan kompleksitas dan ketergantungan antara kedua hierarki, membuat perubahan menjadi lebih sulit dan berpotensi menyebabkan kesalahan. Solusi untuk masalah ini mungkin melibatkan konsolidasi hierarki kelas atau menggunakan pola desain yang lebih cocok untuk mengelola hubungan antara kelas-kelas tersebut.
+                    <br>
+                    Contoh Code nya sebagai berikut : 
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/ChangePreventer/ParallelInheritanceHierarchies.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/ChangePreventer_Refactored/ParallelInheritanceHierarchies.java">Setelah Refactor</a></p>
+            </article>
+       </div>
+    </main>
+    <footer>
+        <p>Code Reengineering &#169; 2024, Davin & Doddy</p>
+    </footer>
+</body>
+</html>

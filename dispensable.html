@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="Asset/Logo Website.png">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/Web.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+            <h1>The Dispensables</h1>
+            <p>
+                "Code smell dispensables" merujuk pada jenis-jenis smell code yang dianggap kurang kritis atau berdampak dan bisa ditoleransi atau diabaikan dalam beberapa konteks tertentu. Meskipun mereka merupakan indikator umum dari kualitas kode yang buruk, mereka mungkin tidak selalu memerlukan perhatian segera atau tindakan perbaikan.
+            </p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="text-decoration: underline;">HOME</a></li>
+                <li><a href="#Comments">Comments</a></li>
+                <li><a href="#duplicateCode">Duplicate Code</a></li>
+                <li><a href="#lazyClass">Lazy Class</a></li>
+                <li><a href="#dataClass">Data Class</a></li>
+                <li><a href="#deadCode">Dead Code</a></li>
+                <li><a href="#speculativeGenerality">Speculative Generality</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+       <div id="content">
+            <article id="Comments" class="card">
+                <h2 id="Comments" style="font-style: italic;">Comments </h2>
+                <img src="Asset/Comments1.png" width="300px">
+                <p>
+                    Komentar yang berlebihan atau tidak jelas sering kali dianggap sebagai bau kode yang dapat diabaikan. Meskipun komentar yang baik dapat membantu dalam memahami kode, komentar yang terlalu banyak atau redundan bisa menjadi indikasi bahwa kode tidak cukup deskriptif atau tidak terstruktur dengan baik.
+                    cara mengatasinya adalah periksa apakah komentar tersebut benar-benar diperlukan atau jika kode dapat diubah menjadi lebih deskriptif tanpa komentar tersebut. Jika komentar terlalu banyak atau tidak relevan, pertimbangkan untuk menghapusnya atau menggantinya dengan kode yang lebih jelas dan ekspresif. 
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/Comments.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/Comments.java">Setelah Refactor</a></p>
+                
+            </article>
+            <article id="duplicateCode" class="card">
+                <h2 id="duplicateCode" style="font-style: italic;">Duplicate Code </h2>
+                <img src="Asset/DupCode1.png" width="300px">
+                <p>
+                    Duplicate Code(duplikasi kode) yang sangat kecil atau tidak signifikan mungkin dianggap sebagai bau kode yang bisa diabaikan. Meskipun menghindari duplikasi kode adalah prinsip dasar dalam pengembangan perangkat lunak, beberapa kasus duplikasi yang sangat kecil mungkin tidak mengganggu performa atau maintenance kode. Solusinya adalah dengan identifikasi pola-pola duplikasi kode dan ekstraklah ke dalam fungsi atau kelas terpisah.
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/duplicateCode.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/duplicateCode.java">Setelah Refactor</a></p>
+                
+            </article>
+            <article id="lazyClass" class="card">
+                <h2 id="lazyClass" style="font-style: italic;">Lazy Class </h2>
+                <img src="Asset/LazClass1.png" width="300px">
+                <p>
+                    Kelas yang tidak melakukan banyak pekerjaan atau memiliki sedikit fungsi dapat dianggap sebagai bau kode yang bisa diabaikan. Mereka mungkin tidak memberikan nilai tambah yang cukup besar untuk membenarkan keberadaan mereka, tetapi mereka tidak secara langsung menyebabkan masalah dalam kode.
+                    solusinya adalah tinjau kelas untuk menilai apakah setiap kelas memiliki tanggung jawab yang cukup untuk membenarkan keberadaannya. Jika tidak, pertimbangkan untuk mengintegrasikan fungsionalitasnya ke dalam kelas lain atau menghapusnya sepenuhnya untuk menyederhanakan desain. 
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/LazyClass.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/LazyClass.java">Setelah Refactor</a></p>
+                
+            </article>
+            <article id="dataClass" class="card">
+                <h2 id="dataClass" style="font-style: italic;">Data Class </h2>
+                <img src="Asset/DataClass1.png" width="300px">
+                <p>
+                    Kelas yang hanya berisi atribut tanpa metode yang signifikan atau perilaku tambahan (hanya berisi setter dan getter) sering kali dianggap sebagai smell code yang bisa diabaikan apabila skala program masih tergolong kecil namun akan menjadi code smell apabila program sudah semakin besar. Mereka cenderung hanya menyimpan data tanpa melakukan operasi yang kompleks atau memiliki fungsionalitas yang substansial. solusinya adalah evaluasi kelas untuk menentukan apakah ia hanya menyimpan data tanpa perilaku tambahan yang berguna atau tidak. Jika iya, pertimbangkan untuk mengubahnya menjadi struktur data atau objek bernilai yang lebih sederhana agar lebih jelas dan terfokus.
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/DataClass.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/DataClass.java">Setelah Refactor</a></p>
+                
+            </article>
+            <article id="deadCode" class="card">
+                <h2 id="deadCode" style="font-style: italic;">Dead Code </h2>
+                <img src="Asset/DeadCode1.png" width="300px">
+                <p>
+                    Code yang tidak lagi digunakan atau tidak diakses dalam aplikasi sering kali dianggap sebagai bau kode yang bisa diabaikan. Meskipun kode ini tidak berdampak pada perilaku aplikasi, keberadaannya mungkin meningkatkan kebingungan dan mempersulit pemahaman tentang bagian kode yang masih aktif. solusinya adalah tinjau kode untuk mengidentifikasi bagian-bagian yang tidak lagi digunakan dan hapus atau komentari kode yang tidak relevan tersebut. Dengan membersihkan kode mati, Anda dapat mempertahankan kejelasan dan kesederhanaan kode.
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/DeadCode.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/DeadCode.java">Setelah Refactor</a></p>
+                
+            </article>
+            <article id="speculativeGenerality" class="card">
+                <h2 id="speculativeGenerality" style="font-style: italic;">Speculative Generality </h2>
+                <img src="Asset/SpecGen1.png" width="300px">
+                <p>
+                    Pembuatan abstraksi yang berlebihan atau generalisasi sebelum kebutuhan sebenarnya muncul dapat dianggap sebagai bau kode yang bisa diabaikan. Hal ini terutama terjadi ketika kita menciptakan struktur yang kompleks atau hierarki kelas yang tidak diperlukan pada saat itu, tetapi lebih sebagai antisipasi akan kebutuhan di masa depan. solusinya adalah Pertimbangkan untuk meninjau struktur atau hierarki kelas untuk mengevaluasi apakah abstraksi atau generalisasi yang diterapkan benar-benar diperlukan saat ini. Jika tidak, mundur dari generalisasi tersebut dan fokuskan pada solusi yang lebih sederhana yang sesuai dengan kebutuhan saat ini.
+                    <br>
+                    Contoh Code nya sebagai berikut :
+                </p>
+                <p><a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Original/Dispensable/SpeculativeGenerality.java">Sebelum Refactor</a> | <a href="https://github.com/Iyaiyak/SmellCode/blob/main/src/Refactored/Dispensable_Refactored/SpeculativeGenerality.java">Setelah Refactor</a></p>
+                
+            </article>
+       </div>
+    </main>
+    <footer>
+        <p>Code Reengineering &#169; 2024, Davin & Doddy</p>
+    </footer>
+</body>
+</html>
